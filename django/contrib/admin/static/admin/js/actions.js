@@ -1,4 +1,6 @@
 (function($) {
+	var _actions_icnt, lastChecked;
+
 	$.fn.actions = function(opts) {
 		var options = $.extend({}, $.fn.actions.defaults, opts);
 		var actionCheckboxes = $(this);
@@ -20,6 +22,7 @@
 				cnt: _actions_icnt
 			}, true));
 			$(options.allToggle).prop("checked", function() {
+				var value;
 				if (sel == actionCheckboxes.length) {
 					value = true;
 					showQuestion();
