@@ -67,12 +67,12 @@
 			checker($(this).prop("checked"));
 			updateCounter();
 		});
-		$("div.actions span.question a").click(function(event) {
+		$("a", options.acrossQuestions).click(function(event) {
 			event.preventDefault();
 			$(options.acrossInput).val(1);
 			showClear();
 		});
-		$("div.actions span.clear a").click(function(event) {
+		$("a", options.acrossClears).click(function(event) {
 			event.preventDefault();
 			$(options.allToggle).prop("checked", false);
 			clearAcross();
@@ -111,7 +111,7 @@
 		});
 		$('form#changelist-form input[name="_save"]').click(function(event) {
 			var action_changed = false;
-			$('div.actions select option:selected').each(function() {
+			$('select option:selected', options.actionContainer).each(function() {
 				if ($(this).val()) {
 					action_changed = true;
 				}
